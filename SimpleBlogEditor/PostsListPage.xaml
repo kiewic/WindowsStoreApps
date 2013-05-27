@@ -1,0 +1,105 @@
+﻿<common:LayoutAwarePage
+    x:Class="SimpleBlogEditor.PostsListPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:SimpleBlogEditor"
+    xmlns:common="using:SimpleBlogEditor.Common"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{StaticResource PageBackgroundBrush}">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <TextBlock Text="This Is The Name of Your Blog" VerticalAlignment="Top" HorizontalAlignment="Left" Style="{StaticResource SectionTitle}" />
+
+            <GridView x:Name="postsListView" Grid.Row="1" SelectionMode="Single" SelectionChanged="postsListView_SelectionChanged_1">
+                <GridView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid HorizontalAlignment="Left" Height="110" Width="330" Background="Fuchsia">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*" />
+                                <RowDefinition Height="auto" />
+                            </Grid.RowDefinitions>
+                            <TextBlock Text="The title of this silly post for creating awesome apps for Windows Store." FontSize="26" Foreground="White" TextWrapping="Wrap" LineHeight="24" LineStackingStrategy="BlockLineHeight" Margin="10,10,10,0" />
+                            <TextBlock Grid.Row="1" Text="Created on 12/31/2812" Margin="10, 0, 10, 5" Foreground="#DDDDDD" />
+                        </Grid>
+                    </DataTemplate>
+                </GridView.ItemTemplate>
+
+                <!--<GridView.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <WrapGrid Orientation="Horizontal" />
+                    </ItemsPanelTemplate>
+                </GridView.ItemsPanel>-->
+
+                <x:String>Item 1</x:String>
+                <x:String>Item 2</x:String>
+                <x:String>Item 1</x:String>
+                <x:String>Item 2</x:String>
+                <x:String>Item 1</x:String>
+                <x:String>Item 2</x:String>
+            </GridView>
+        </Grid>
+
+        <Rectangle Fill="White" Opacity="0.75" x:Name="popUpBackgroundRect" />
+        
+        <Grid Width="400" Height="500" Background="#FF6600" x:Name="popUpGrid">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <TextBlock Text="These Are Your Blogs" TextAlignment="Center" Style="{StaticResource PopUpTitle}" />
+
+            <ListView Grid.Row="1" x:Name="blogsListView" Grid.RowSpan="2" IsItemClickEnabled="True" ItemClick="blogsListView_ItemClick">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Margin="5">
+                            <TextBlock Text="{Binding Name}" FontSize="20" Foreground="White" />
+                            <TextBlock Text="{Binding Url}" FontSize="10" Foreground="White" />
+                        </StackPanel>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+
+                <ListView.ItemContainerStyle>
+                    <Style TargetType="ListViewItem">
+                        <Setter Property="HorizontalAlignment" Value="Stretch" />
+                        <Setter Property="Background" Value="#D9004F" />
+                        <Setter Property="Margin" Value="0" />
+                    </Style>
+                </ListView.ItemContainerStyle>
+
+                <x:String>Item 1</x:String>
+                <x:String>Item 2</x:String>
+            </ListView>
+        </Grid>
+    </Grid>
+
+    <Page.BottomAppBar>
+        <AppBar x:Name="bottomBar" Style="{StaticResource ToolsAppBar}">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                <Button
+                    x:Name="newButton"
+                    Content="Assets/NewIcon.png"
+                    Tag="Create New Post"
+                    Style="{StaticResource BarButton}"
+                    Click="newButton_Click_1" />
+                <Button
+                    x:Name="editButton"
+                    Content="Assets/EditIcon.png"
+                    Tag="Edit Selected Post"
+                    Style="{StaticResource BarButton}" />
+                <Button
+                    x:Name="deleteButton"
+                    Content="Assets/DeleteIcon.png"
+                    Tag="Delete Selected Post"
+                    Style="{StaticResource BarButton}" />
+            </StackPanel>
+        </AppBar>
+    </Page.BottomAppBar>
+</common:LayoutAwarePage>

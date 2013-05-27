@@ -34,3 +34,7 @@ SuperOverflow
 
 This contains an IXHR2 wrapper (incomplete).
 
+SimpleBlogEditor
+----------------
+
+A client for Blogger. It has a bit of OAuth2, and a posts editor.

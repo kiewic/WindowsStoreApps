@@ -1,0 +1,31 @@
+﻿<Page
+    x:Class="SimpleBlogEditor.PreEditorPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:SimpleBlogEditor"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{StaticResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        
+        <TextBox x:Name="contentTextBox" Style="{StaticResource PreTextBox}" />
+
+        <StackPanel Grid.Row="1" Orientation="Horizontal" Margin="20" HorizontalAlignment="Left">
+            <Button x:Name="Cancel" Content="Cancel" Click="Cancel_Click_1" />
+        </StackPanel>
+
+        <StackPanel Grid.Row="1" Orientation="Horizontal" Margin="20" HorizontalAlignment="Right">
+            <Button
+                x:Name="RemoveExtraIdentation"
+                Content="Remove Extra Identation"
+                Click="RemoveExtraIdentation_Click_1" />
+            <Button x:Name="AddIdentation" Content="Add Identation" Click="AddIdentation_Click_1" />
+            <Button x:Name="Done" Content="Done" Click="Done_Click_1" />
+        </StackPanel>
+    </Grid>
+</Page>
