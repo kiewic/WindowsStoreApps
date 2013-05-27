@@ -1,0 +1,26 @@
+﻿<Page
+    x:Class="TcpChat.ChatPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:TcpChat"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{StaticResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0" x:Name="MessagesPanel">
+        </StackPanel>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="3*" />
+                <ColumnDefinition Width="1*" />
+            </Grid.ColumnDefinitions>
+            <TextBox Grid.Column="0" x:Name="MessageBox" FontSize="16" Margin="10,5,10,10" TextWrapping="Wrap" Foreground="Gray" Text="Type Your Message Here" GotFocus="MessageBox_GotFocus" LostFocus="MessageBox_LostFocus" />
+            <Button Grid.Column="1" x:Name="SendButton" Margin="5,5,10,5" Click="Button_Click" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">Send Now</Button>
+        </Grid>
+    </Grid>
+</Page>

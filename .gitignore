@@ -1,0 +1,21 @@
+# All Apps
+# * A *.suo is solution user options.
+*.suo
+
+# C# App
+# * A *.csproj.user stores user-specific properties, e.g., debugging and deployment settings.
+bin
+bld
+obj
+*.csproj.user
+
+# C++ App
+# * A *.sdf is code browsing database.
+# * A *.vcxproj.user stores user-specific properties, e.g., debugging and deployment settings.
+# * ipch contains intellisense cache for precompiled header file.
+ARM
+Debug
+Generated Files
+ipch
+*.sdf
+*.vcxproj.user

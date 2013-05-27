@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Package xmlns="http://schemas.microsoft.com/appx/2010/manifest">
+  <Identity Name="1b0b5c69-2109-4b7a-856d-8cf2884779dd" Publisher="CN=Gilberto" Version="1.0.0.0" />
+  <Properties>
+    <DisplayName>SuperOverflow</DisplayName>
+    <PublisherDisplayName>Gilberto</PublisherDisplayName>
+    <Logo>Assets\StoreLogo.png</Logo>
+  </Properties>
+  <Prerequisites>
+    <OSMinVersion>6.2.1</OSMinVersion>
+    <OSMaxVersionTested>6.2.1</OSMaxVersionTested>
+  </Prerequisites>
+  <Resources>
+    <Resource Language="x-generate" />
+  </Resources>
+  <Applications>
+    <Application Id="App" Executable="$targetnametoken$.exe" EntryPoint="SuperOverflow.App">
+      <VisualElements DisplayName="SuperOverflow" Logo="Assets\Logo.png" SmallLogo="Assets\SmallLogo.png" Description="SuperOverflow" ForegroundText="dark" BackgroundColor="#F9F9F9">
+        <DefaultTile ShowName="logoOnly" WideLogo="Assets\WideLogo.png" />
+        <SplashScreen Image="Assets\SplashScreen.png" />
+      </VisualElements>
+    </Application>
+  </Applications>
+  <Capabilities>
+    <Capability Name="internetClient" />
+  </Capabilities>
+</Package>
