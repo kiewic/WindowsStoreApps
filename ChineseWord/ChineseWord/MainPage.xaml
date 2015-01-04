@@ -1,0 +1,40 @@
+﻿<Page
+    x:Class="ChineseWord.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:ChineseWord"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+    <Page.Resources>
+        <Style x:Key="ChineseWord" TargetType="TextBlock">
+            <Setter Property="Foreground" Value="White" />
+            <Setter Property="FontSize" Value="100" />
+            <Setter Property="HorizontalAlignment" Value="Center" />
+        </Style>
+        <DataTemplate x:Key="WordTemplate">
+            <StackPanel VerticalAlignment="Center">
+                <TextBlock Style="{StaticResource ChineseWord}" Text="{Binding ChineseWord}" />
+                <TextBlock Style="{StaticResource ChineseWord}" Text="{Binding Pronunciation}" />
+                <TextBlock Style="{StaticResource ChineseWord}" Text="{Binding EnglishWord}" />
+            </StackPanel>
+        </DataTemplate>
+    </Page.Resources>
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <FlipView HorizontalContentAlignment="Center" VerticalContentAlignment="Center" ItemTemplate="{StaticResource WordTemplate}">
+            <FlipView.Items>
+                <local:WordOfTheDay ChineseWord="你好" Pronunciation="Nǐ Hǎo" EnglishWord="Hello" />
+                <local:WordOfTheDay ChineseWord="再見/再见" Pronunciation="Zài jiàn" EnglishWord="Goodbye" />
+                <local:WordOfTheDay ChineseWord="谢谢" Pronunciation="xièxie" EnglishWord="Thank You" />
+                <!--
+                <Image Source="http://i.imgur.com/cMHvNrQ.jpg" />
+                <Image Source="http://i.imgur.com/QZNum3o.jpg" />
+                <Image Source="http://i.imgur.com/qMGELZQ.jpg" />
+                <Image Source="http://i.imgur.com/NyNMk1m.jpg" />
+                <Image Source="http://i.imgur.com/5hQqvCU.jpg" />
+                <Image Source="http://i.imgur.com/IoQHEhH.jpg" />
+                -->
+            </FlipView.Items>
+        </FlipView>
+    </Grid>
+</Page>

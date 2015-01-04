@@ -59,6 +59,9 @@ SpanishQuiz
 
 <img src="http://i.imgur.com/u6PrfwH.png" alt="screenshot" />
 
+ChineseWord
+-----------
 
+Learn Chinese. Receive new words from an Azure Mobile Service.
 
-
+<img src="http://imgur.com/yQZvFn1" alt="screenshot" />
