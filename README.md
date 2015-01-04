@@ -64,4 +64,4 @@ ChineseWord
 
 Learn Chinese. Receive new words from an Azure Mobile Service.
 
-<img src="http://imgur.com/yQZvFn1" alt="screenshot" />
+<img src="http://i.imgur.com/yQZvFn1.png" alt="screenshot" />
