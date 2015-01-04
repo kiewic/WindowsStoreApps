@@ -19,3 +19,8 @@ Generated Files
 ipch
 *.sdf
 *.vcxproj.user
+
+# NuGet Packages Directory
+packages/
+# If the tool you use requires repositories.config uncomment the next line
+!packages/repositories.config

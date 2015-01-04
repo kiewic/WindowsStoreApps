@@ -47,3 +47,13 @@ BadBunny
 
 <img src="http://kiewic.com/fwd/index/BadBunny.gif" alt="Bad Bunny" width="200" />
 
+Chopsticks
+----------
+
+How do you transfer a file into your Surface?
+
+<img src="http://i.imgur.com/Tttrhfu.png" alt="screenshot" width="200" />
+
+
+
+

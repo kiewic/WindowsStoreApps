@@ -1,0 +1,246 @@
+﻿<Page
+    x:Class="Chopsticks.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Chopsticks"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d" Loaded="Page_Loaded">
+
+    <Page.Resources>
+        <Style x:Key="MessageBorderStyle" TargetType="Border">
+            <Setter Property="Background" Value="#F7D842" />
+            <Setter Property="BorderBrush" Value="#F5CF1B" />
+            <Setter Property="BorderThickness" Value="0,0,0,7" />
+        </Style>
+        <Style x:Key="MessageTextStyle" TargetType="TextBlock">
+            <Setter Property="Foreground" Value="White" />
+            <Setter Property="FontSize" Value="25" />
+            <Setter Property="Padding" Value="5" />
+        </Style>
+        <Style TargetType="TextBlock">
+            <Setter Property="Foreground" Value="White" />
+        </Style>
+        <Style x:Key="TokenBarBorderStyle" TargetType="Border">
+            <Setter Property="Background" Value="#46CECE" />
+            <Setter Property="BorderBrush" Value="#FF31ACAC" />
+            <Setter Property="BorderThickness" Value="0,0,0,7" />
+        </Style>
+        <Style x:Key="TokenBarButtonStyle" TargetType="Button">
+            <Setter Property="HorizontalAlignment" Value="Right" />
+            <Setter Property="Background" Value="Transparent" />
+        </Style>
+        <Style x:Key="TokenBarTextStyle" TargetType="TextBlock">
+            <Setter Property="Foreground" Value="#66579C" />
+            <Setter Property="FontSize" Value="55" />
+            <Setter Property="Padding" Value="5" />
+        </Style>
+        <Style x:Key="TokenTextStyle" TargetType="TextBlock">
+            <Setter Property="Foreground" Value="#66579C" />
+            <Setter Property="FontSize" Value="77" />
+            <Setter Property="Padding" Value="10" />
+        </Style>
+        <Style x:Key="FileNameTextStyle" TargetType="TextBlock">
+            <Setter Property="Foreground" Value="White" />
+            <Setter Property="FontSize" Value="55" />
+            <Setter Property="Padding" Value="5" />
+        </Style>
+        <Style x:Key="StatusTextStyle" TargetType="TextBlock">
+            <Setter Property="Foreground" Value="White" />
+            <Setter Property="FontSize" Value="33" />
+            <Setter Property="Padding" Value="5" />
+        </Style>
+        <Style x:Key="ButtonTextStyle" TargetType="TextBlock">
+            <Setter Property="TextAlignment" Value="Center" />
+        </Style>
+        <Style x:Key="BottomButtonStyle" TargetType="Button">
+            <Setter Property="Background" Value="{ThemeResource ButtonBackgroundThemeBrush}"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="BorderBrush" Value="{ThemeResource ButtonBorderThemeBrush}"/>
+            <Setter Property="BorderThickness" Value="0,7,0,0"/>
+            <!--<Setter Property="Padding" Value="12,4,12,4"/>-->
+            <Setter Property="HorizontalAlignment" Value="Stretch"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <!--<Setter Property="FontFamily" Value="{ThemeResource ContentControlThemeFontFamily}"/>-->
+            <!--<Setter Property="FontWeight" Value="SemiBold"/>-->
+            <Setter Property="FontSize" Value="40"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border x:Name="Border" 
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            Background="{TemplateBinding Background}">
+                            <VisualStateManager.VisualStateGroups>
+                                <VisualStateGroup x:Name="CommonStates">
+                                    <VisualState x:Name="Normal"/>
+                                    <VisualState x:Name="PointerOver">
+                                        <Storyboard>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Background" Storyboard.TargetName="Border">
+                                                <DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource ButtonPointerOverBackgroundThemeBrush}"/>
+                                            </ObjectAnimationUsingKeyFrames>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="BorderBrush" Storyboard.TargetName="Border">
+                                                <DiscreteObjectKeyFrame KeyTime="0" Value="#A0CDCDCD"/>
+                                            </ObjectAnimationUsingKeyFrames>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Foreground" Storyboard.TargetName="ContentPresenter">
+                                                <DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource ButtonPointerOverForegroundThemeBrush}"/>
+                                            </ObjectAnimationUsingKeyFrames>
+                                        </Storyboard>
+                                    </VisualState>
+                                    <VisualState x:Name="Pressed">
+                                        <Storyboard>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Background" Storyboard.TargetName="Border">
+                                                <DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource ButtonPressedBackgroundThemeBrush}"/>
+                                            </ObjectAnimationUsingKeyFrames>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="BorderBrush" Storyboard.TargetName="Border">
+                                                <DiscreteObjectKeyFrame KeyTime="0" Value="#A0000000"/>
+                                            </ObjectAnimationUsingKeyFrames>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Foreground" Storyboard.TargetName="ContentPresenter">
+                                                <DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource ButtonPressedForegroundThemeBrush}"/>
+                                            </ObjectAnimationUsingKeyFrames>
+                                        </Storyboard>
+                                    </VisualState>
+                                    <VisualState x:Name="Disabled">
+                                        <Storyboard>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Background" Storyboard.TargetName="Border">
+                                                <DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource ButtonDisabledBackgroundThemeBrush}"/>
+                                            </ObjectAnimationUsingKeyFrames>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="BorderBrush" Storyboard.TargetName="Border">
+                                                <DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource ButtonDisabledBorderThemeBrush}"/>
+                                            </ObjectAnimationUsingKeyFrames>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Foreground" Storyboard.TargetName="ContentPresenter">
+                                                <DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource ButtonDisabledForegroundThemeBrush}"/>
+                                            </ObjectAnimationUsingKeyFrames>
+                                        </Storyboard>
+                                    </VisualState>
+                                </VisualStateGroup>
+                                <VisualStateGroup x:Name="FocusStates">
+                                    <VisualState x:Name="Focused"/>
+                                    <VisualState x:Name="Unfocused"/>
+                                    <VisualState x:Name="PointerFocused"/>
+                                </VisualStateGroup>
+                            </VisualStateManager.VisualStateGroups>
+                            <ContentPresenter x:Name="ContentPresenter" AutomationProperties.AccessibilityView="Raw" ContentTemplate="{TemplateBinding ContentTemplate}" ContentTransitions="{TemplateBinding ContentTransitions}" Content="{TemplateBinding Content}" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="ShareButtonStyle" BasedOn="{StaticResource BottomButtonStyle}" TargetType="Button">
+            <Setter Property="Background" Value="#5481E6" />
+            <Setter Property="BorderBrush" Value="#805481E6" />
+        </Style>
+        <Style x:Key="SaveButtonStyle" BasedOn="{StaticResource BottomButtonStyle}" TargetType="Button">
+            <Setter Property="Background" Value="#2CA8C2" />
+            <Setter Property="BorderBrush" Value="#992CA8C2" />
+        </Style>
+        <Style x:Key="CopyButtonStyle" BasedOn="{StaticResource BottomButtonStyle}" TargetType="Button">
+            <Setter Property="Background" Value="#98CB4A" />
+            <Setter Property="BorderBrush" Value="#9998CB4A" />
+        </Style>
+        <Style x:Key="RemoveButtonStyle" BasedOn="{StaticResource BottomButtonStyle}" TargetType="Button">
+            <Setter Property="Background" Value="#A6E8AA" />
+            <Setter Property="BorderBrush" Value="#99A6E8AA" />
+        </Style>
+        <Style x:Key="DetailsButtonStyle" BasedOn="{StaticResource BottomButtonStyle}" TargetType="Button">
+            <Setter Property="Background" Value="#839098" />
+            <Setter Property="BorderBrush" Value="#99839098" />
+        </Style>
+        <Flyout x:Name="PasscodeFlyout" Opened="PasscodeFlyout_Opened">
+            <StackPanel>
+                <TextBlock x:Name="PasscodeText" Style="{StaticResource TokenTextStyle}">---4554</TextBlock>
+                <HyperlinkButton Click="GenerateButton_Click">Generate a new token.</HyperlinkButton>
+            </StackPanel>
+        </Flyout>
+        <DataTemplate x:Key="FileTemplate">
+            <StackPanel Background="{Binding Background}">
+                <TextBlock Style="{StaticResource FileNameTextStyle}" Text="{Binding FileName}" />
+                <TextBlock Style="{StaticResource StatusTextStyle}" Text="{Binding Status}" />
+            </StackPanel>
+        </DataTemplate>
+    </Page.Resources>
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Margin="0,3,0,-3">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <Grid.Resources>
+        </Grid.Resources>
+
+        <Border x:Name="MessageBorder" Style="{StaticResource MessageBorderStyle}">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+                <TextBlock Style="{StaticResource MessageTextStyle}">Welcome back cowboy!</TextBlock>
+                <TextBlock Grid.Column="1" Style="{StaticResource MessageTextStyle}" Tapped="Close_Tapped">[X]</TextBlock>
+                <Grid.Resources>
+                    <!-- Animations where the system determines there could be a performance impact are called dependent animations. -->
+                    <!-- 75 was an arbitrary height. -->
+                    <Storyboard x:Name="MessageStoryboard">
+                        <DoubleAnimation
+                            Storyboard.TargetName="MessageBorder"
+                            Storyboard.TargetProperty="Height"
+                            Duration="0:0:0.1"
+                            From="75"
+                            To="5"
+                            EnableDependentAnimation="True"/>
+                        <ObjectAnimationUsingKeyFrames 
+                            Storyboard.TargetName="MessageBorder"
+                            Storyboard.TargetProperty="Visibility">
+                            <DiscreteObjectKeyFrame KeyTime="0:0:0.2" Value="Collapsed" />
+                        </ObjectAnimationUsingKeyFrames>
+                    </Storyboard>
+                </Grid.Resources>
+            </Grid>
+        </Border>
+
+        <Border Grid.Row="1" Style="{StaticResource TokenBarBorderStyle}">
+            <Button Style="{StaticResource TokenBarButtonStyle}" Flyout="{StaticResource PasscodeFlyout}">
+                <TextBlock Style="{StaticResource TokenBarTextStyle}">Token &#x25B6;</TextBlock>
+            </Button>
+        </Border>
+
+        <ListView Grid.Row="2" x:Name="FilesView" ItemTemplate="{StaticResource FileTemplate}">
+            <local:PostedFile FileName="LolCat.gif"/>
+            <local:PostedFile FileName="File214.gif"/>
+            <local:PostedFile FileName="califragilisticexpialidocious.png"/>
+            <local:PostedFile FileName="File214.gif"/>
+            <local:PostedFile FileName="File1.gif"/>
+            <local:PostedFile FileName="File214.gif"/>
+            <local:PostedFile FileName="File214.gif"/>
+            <local:PostedFile FileName="File1.gif"/>
+            <local:PostedFile FileName="File214.gif"/>
+        </ListView>
+
+        <Grid Grid.Row="3">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Button Grid.Column="0" Style="{StaticResource ShareButtonStyle}">
+                <TextBlock Style="{StaticResource ButtonTextStyle}">&#x1F37B;<LineBreak/>Share</TextBlock>
+            </Button>
+            <Button Grid.Column="1" Style="{StaticResource SaveButtonStyle}">
+                <TextBlock Style="{StaticResource ButtonTextStyle}">&#x1F4BE;<LineBreak/>Save</TextBlock>
+            </Button>
+            <Button Grid.Column="2" Style="{StaticResource CopyButtonStyle}">
+                <TextBlock Style="{StaticResource ButtonTextStyle}">&#x1F4CB;<LineBreak/>Copy</TextBlock>
+            </Button>
+            <Button Grid.Column="3" Style="{StaticResource RemoveButtonStyle}">
+                <TextBlock Style="{StaticResource ButtonTextStyle}">&#x1F4A3;<LineBreak/>Remove</TextBlock>
+            </Button>
+            <Button Grid.Column="4" Style="{StaticResource DetailsButtonStyle}">
+                <TextBlock Style="{StaticResource ButtonTextStyle}">35 KB<LineBreak/>1/21/2014</TextBlock>
+            </Button>
+        </Grid>
+    </Grid>
+</Page>
