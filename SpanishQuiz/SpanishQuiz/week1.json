@@ -1,0 +1,7 @@
+﻿[
+    { "Question" : "¡Hola! ¿Cómo te llamas?", "Answer" : ["Me llamo Jacinta."]},
+    { "Question" : "¿De dónde erer?", "Answer" : ["Soy de Seattle"]},
+    { "Question" : "¿Cómo eres?", "Answer" : ["Soy morena, alta, estudiosa y responsable."]},
+    { "Question" : "¿Dónde vives? ¿Dónde estudias?", "Answer" : ["Vivo en Seattle y estudio en SCCC."]},
+    { "Question" : "¿Cómo son tus clases?", "Answer" : ["Mis clases son fáciles y estoy muy contenta."]}
+]

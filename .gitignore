@@ -24,3 +24,7 @@ ipch
 packages/
 # If the tool you use requires repositories.config uncomment the next line
 !packages/repositories.config
+
+
+# Windows Files
+Thumbs.db

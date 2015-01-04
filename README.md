@@ -52,7 +52,12 @@ Chopsticks
 
 How do you transfer a file into your Surface?
 
-<img src="http://i.imgur.com/Tttrhfu.png" alt="screenshot" width="200" />
+<img src="http://i.imgur.com/Tttrhfu.png" alt="screenshot" />
+
+SpanishQuiz
+-----------
+
+<img src="http://i.imgur.com/u6PrfwH.png" alt="screenshot" />
 
 
 

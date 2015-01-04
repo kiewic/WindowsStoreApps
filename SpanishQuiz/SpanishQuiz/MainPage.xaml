@@ -1,0 +1,38 @@
+﻿<Page
+    x:Class="SpanishQuiz.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:SpanishQuiz"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+    
+    <Page.Resources>
+        <Style TargetType="TextBlock">
+            <Setter Property="FontSize" Value="60" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="HorizontalAlignment" Value="Center" />
+        </Style>
+        <Style TargetType="Button">
+            <Setter Property="FontSize" Value="60" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="HorizontalAlignment" Value="Center" />
+        </Style>
+    </Page.Resources>
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <TextBlock x:Name="QuestionBlock" Grid.Row="0" Text="{Binding Text}" />
+        <Button x:Name="Answer1Button" Grid.Row="1" Click="Answer1Button_Click">Answer 1</Button>
+        <Button x:Name="Answer2Button" Grid.Row="2" Click="Answer2Button_Click">Answer 2</Button>
+        <Grid Grid.Row="3">
+            <TextBlock x:Name="CorrectBlock" HorizontalAlignment="Left" Foreground="DarkGreen">0</TextBlock>
+            <TextBlock x:Name="WrongBlock" HorizontalAlignment="Right" Foreground="DarkRed">0</TextBlock>
+        </Grid>
+    </Grid>
+</Page>
