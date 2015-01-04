@@ -38,3 +38,12 @@ SimpleBlogEditor
 ----------------
 
 A client for Blogger. It has a bit of OAuth2, and a posts editor.
+
+BadBunny
+--------
+
+* Splash screen API.
+* Animation with exponential ease.
+
+<img src="http://kiewic.com/fwd/index/BadBunny.gif" alt="Bad Bunny" width="200" />
+
