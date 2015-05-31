@@ -28,3 +28,6 @@ packages/
 
 # Windows Files
 Thumbs.db
+
+# Windows Store app package directory
+AppPackages/

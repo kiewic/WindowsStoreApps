@@ -1,0 +1,31 @@
+﻿<Page
+    x:Class="MonkeySays.SymbolPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:MonkeySays"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Page.Resources>
+        <Style x:Key="LetterStyle" TargetType="TextBlock">
+            <Setter Property="HorizontalAlignment" Value="Center" />
+            <Setter Property="FontSize" Value="150" />
+        </Style>
+        <Style x:Key="ExampleStyle" TargetType="TextBlock">
+            <Setter Property="HorizontalAlignment" Value="Center" />
+            <Setter Property="FontSize" Value="100" />
+            <Setter Property="TextWrapping" Value="Wrap" />
+            <Setter Property="TextAlignment" Value="Center" />
+        </Style>
+    </Page.Resources>
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid Background="{Binding Path=BackgroundBrush}" Height="{Binding ActualHeight, ElementName=MyMainPage}">
+            <StackPanel VerticalAlignment="Center">
+                <TextBlock Style="{StaticResource LetterStyle}" Text="{Binding Path=Value}">/ɪ/</TextBlock>
+                <TextBlock x:Name="ExampleBlock" Style="{StaticResource ExampleStyle}" Text="{Binding Path=Example}">b<Bold>i</Bold>d, p<Bold>i</Bold>t</TextBlock>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Page>

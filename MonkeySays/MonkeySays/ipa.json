@@ -1,0 +1,78 @@
+{
+	"Vowels":
+	{
+		"/ɪ/": "b**i**d, p**i**t",
+		"/iː/": "b**ea**d, p**ea**t",
+		"/i/": "happ**y**, cit**y**",
+		"/ɛ/": "b**e**d, p**e**t",
+		"/æ/": "b**a**d, p**a**t",
+		"/ɑː/": "b**a**lm, f**a**ther, p**a**",
+		"/ɒ/": "b**o**d, p**o**t, c**o**t",
+		"/ɔː/": "b**aw**d, p**aw**, c**augh**t",
+		"/ʊ/": "g**oo**d, f**oo**t, p**u**t",
+		"/uː/": "b**oo**ed, f**oo**d",
+		"/ʌ/": "b**u**d, n**u**t"
+	},
+	"Consonants":
+	{
+		"/b/": "**b**ut, we**b**",
+		"/d/": "**d**o, o**dd**",
+		"/ð/": "**th**is, brea**the**, fa**th**er",
+		"/dʒ/": "**g**in, **j**oy, e**dge**",
+		"/f/": "**f**ool, enou**gh**, lea**f**",
+		"/ɡ/": "**g**o, **g**et, be**g**",
+		"/h/": "**h**am, a**h**ead",
+		"/j/": "**y**es",
+		"/k/": "**c**at, **k**ill, s**k**in, **q**ueen, thi**ck**",
+		"/l/": "**l**eft, be**ll**",
+		"/m/": "**m**an, ha**m**",
+		"/n/": "**n**o, ti**n**",
+		"/ŋ/": "ri**ng**er, si**ng**, si**n**k",
+		"/ŋɡ/": "fi**ng**er",
+		"/p/": "**p**en, s**p**in, ti**p**",
+		"/r/": "**r**un, ve**r**y",
+		"/s/": "**s**ee, **c**ity, p**ass**",
+		"/ʃ/": "**sh**e, **s**ure, emo**ti**on, lea**sh**",
+		"/t/": "**t**wo, s**t**ing, be**t**",
+		"/tʃ/": "**ch**air, na**tu**re, tea**ch**",
+		"/v/": "**v**oice, ha**ve**",
+		"/w/": "**w**e",
+		"/ʍ/": "**wh**at",
+		"/z/": "**z**oo, ro**s**e",
+		"/ʒ/": "plea**s**ure, vi**s**ion, bei**ge**",
+		"/θ/": "**th**ing, tee**th**"
+	},
+	"Diphthongs":
+	{
+		"/eɪ/": "b**ay**, h**ey**, f**at**e",
+		"/аɪ/": "b**uy**, h**igh**, r**i**de, wr**i**te",
+		"/aʊ/": "b**ough**, h**ow**, p**ou**t",
+		"/ɔɪ/": "b**oy**, h**oy**",
+		"/oʊ/": "b**eau**, h**oe**, p**o**ke",
+		"/juː/": "b**eau**ty, h**ue**, p**ew**, d**ew**"
+	},
+	"R-colored vowels":
+	{
+		"/ɪr/": "mi**rr**or",
+		"/ɪər/": "b**ee**r, m**ere**",
+		"/ɛr/": "b**err**y, m**err**y",
+		"/ɛər/": "b**ear**, m**are**, sc**ar**y",
+		"/ær/": "b**arr**ow, m**arr**y",
+		"/ɑr/": "b**ar**, m**ar**",
+		"/ɒr/": "m**or**al, f**or**age",
+		"/ɔr/": "b**or**n, f**or**",
+		"/ɔər/": "b**oar**, f**our**, m**ore**",
+		"/ʌr/": "h**urr**y, b**urr**y",
+		"/ʊər/": "b**oor**, m**oor**",
+		"/ɜr/": "b**ir**d, m**yrrh**, f**urr**y"
+	},
+	"Reduced vowels":
+	{
+		"/ɨ/": "ros**e**s, busin**e**ss",
+		"/ə/": "Ros**a**’s, **a**bove",
+		"/ər/": "runn**er**, merc**er**",
+		"/əl/": "bott**le**",
+		"/ən/": "butt**on**",
+		"/əm/": "rhyth**m**"
+	}
+}

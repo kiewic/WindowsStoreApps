@@ -1,0 +1,105 @@
+﻿<Page
+    x:Class="MonkeySays.ListViewPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:MonkeySays"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Page.Resources>
+        <Style x:Key="CustomItemContainerStyle" TargetType="ListViewItem">
+            <!-- The following two styles fixes the issue of items not expanding 100%. -->
+            <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+            <Setter Property="VerticalContentAlignment" Value="Stretch" />
+            <!-- Margin must be zero to get rid of the space between items. Default is 1.-->
+            <Setter Property="Margin" Value="0" />
+            <!-- ListViewItem styles and templates: http://msdn.microsoft.com/en-us/library/windows/apps/xaml/jj709921.aspx -->
+            <!-- ContentMargin must be zero to get rid of the vertical space between items. Defaults is 4. -->
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="ListViewItem">
+                        <ListViewItemPresenter
+                            ContentTransitions="{TemplateBinding ContentTransitions}"
+                            Padding="{TemplateBinding Padding}"
+                            SelectionCheckMarkVisualEnabled="True"
+                            CheckHintBrush="{ThemeResource ListViewItemCheckHintThemeBrush}"
+                            CheckSelectingBrush="{ThemeResource ListViewItemCheckSelectingThemeBrush}"
+                            CheckBrush="{ThemeResource ListViewItemCheckThemeBrush}"
+                            DragBackground="{ThemeResource ListViewItemDragBackgroundThemeBrush}"
+                            DragForeground="{ThemeResource ListViewItemDragForegroundThemeBrush}"
+                            FocusBorderBrush="{ThemeResource ListViewItemFocusBorderThemeBrush}"
+                            PlaceholderBackground="{ThemeResource ListViewItemPlaceholderBackgroundThemeBrush}"
+                            PointerOverBackground="{ThemeResource ListViewItemPointerOverBackgroundThemeBrush}"
+                            SelectedBorderThickness="{ThemeResource ListViewItemCompactSelectedBorderThemeThickness}"
+                            SelectedBackground="{ThemeResource ListViewItemSelectedBackgroundThemeBrush}"
+                            SelectedForeground="{ThemeResource ListViewItemSelectedForegroundThemeBrush}"
+                            SelectedPointerOverBackground="{ThemeResource ListViewItemSelectedPointerOverBackgroundThemeBrush}"
+                            SelectedPointerOverBorderBrush="{ThemeResource ListViewItemSelectedPointerOverBorderThemeBrush}"
+                            DisabledOpacity="{ThemeResource ListViewItemDisabledThemeOpacity}"
+                            DragOpacity="{ThemeResource ListViewItemDragThemeOpacity}"
+                            ReorderHintOffset="{ThemeResource ListViewItemReorderHintThemeOffset}"
+                            HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+                            VerticalContentAlignment="Stretch"
+                            PointerOverBackgroundMargin="0"
+                            ContentMargin="0" />
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="CustomListViewStyle" TargetType="ListView">
+            <!-- Empty? -->
+        </Style>
+        <Style x:Key="LetterStyle" TargetType="TextBlock">
+            <Setter Property="FontSize" Value="80" />
+            <Setter Property="TextAlignment" Value="Center" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+        </Style>
+        <ItemsPanelTemplate x:Key="ExampleItemsPanel">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" />
+        </ItemsPanelTemplate>
+        <DataTemplate x:Key="ExampleItemTemplate">
+            <TextBlock Text="{Binding Piece}" FontWeight="{Binding Weight}" Style="{StaticResource LetterStyle}" />
+        </DataTemplate>
+        <DataTemplate x:Key="CustomItemTemplate">
+            <Grid HorizontalAlignment="Stretch" Background="YellowGreen">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="3*" />
+                </Grid.ColumnDefinitions>
+                <Border Grid.Column="0" Background="{Binding Path=DarkBackgroundBrush}">
+                    <TextBlock Grid.Column="0" Style="{StaticResource LetterStyle}" Text="{Binding Path=Value}" />
+                </Border>
+                <Border Grid.Column="1" Background="{Binding Path=LightBackgroundBrush}">
+                    <StackPanel>
+                        <ItemsControl
+                            ItemsPanel="{StaticResource ExampleItemsPanel}"
+                            ItemTemplate="{StaticResource ExampleItemTemplate}"
+                            ItemsSource="{Binding ExamplePieces}" />
+                    </StackPanel>
+                </Border>
+            </Grid>
+        </DataTemplate>
+    </Page.Resources>
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <ListView
+            x:Name="SymbolsView"
+            Style="{StaticResource CustomListViewStyle}"
+            ItemTemplate="{StaticResource CustomItemTemplate}"
+            ItemContainerStyle="{StaticResource CustomItemContainerStyle}"
+            SelectionMode="Single">
+            <local:IpaSymbol Value="/t/" Example="two" Background="Turquoise" />
+            <local:IpaSymbol Value="/b/" Example="but" Background="DodgerBlue" />
+            <local:IpaSymbol Value="/iː/" Example="bead" Background="Indigo" />
+            <local:IpaSymbol Value="/i/" Example="happy" Background="SlateBlue" />
+            <local:IpaSymbol Value="/ɪ/" Example="bid" Background="Purple" />
+            <local:IpaSymbol Value="/ɛ/" Example="bed" Background="RoyalBlue" />
+            <local:IpaSymbol Value="/t/" Example="two" Background="CornflowerBlue" />
+            <local:IpaSymbol Value="/b/" Example="but" Background="DeepSkyBlue" />
+            <local:IpaSymbol Value="/iː/" Example="bead" Background="MediumSlateBlue" />
+            <local:IpaSymbol Value="/i/" Example="happy" Background="Orchid" />
+            <local:IpaSymbol Value="/ɪ/" Example="bid" Background="Purple" />
+        </ListView>
+    </Grid>
+</Page>
